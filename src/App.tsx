@@ -1,6 +1,11 @@
 import { ChakraProvider, Grid, GridItem } from "@chakra-ui/react";
 import Home from "./components/Home";
 import Status from "./components/Status";
+import { useState } from "react";
+
+const [city, setCity] = useState("Miami");
+const [isHome, setIsHome] = useState(false);
+const [working, setWorking] = useState(false);
 
 export default function App() {
   return (
@@ -22,7 +27,12 @@ export default function App() {
             <Status money={5000}></Status>
           </GridItem>
           <GridItem pl="2" bg="pink.300" area={"nav"}>
-            <Home />
+            <Home
+              city={city}
+              working={working}
+              setIsHome={setIsHome}
+              setCity={setCity(city)}
+            />
           </GridItem>
           <GridItem pl="2" bg="green.300" area={"main"}>
             Main
