@@ -1,22 +1,8 @@
 import { Button, HStack } from "@chakra-ui/react";
+import usePokerDataStore from "./store";
 
-interface Props {
-  city: string;
-  setCity: () => void;
-  working: boolean;
-  setWorking: () => void;
-  isHome: boolean;
-  setIsHome: () => void;
-}
-
-const Home = ({
-  city,
-  setCity,
-  setIsHome,
-  isHome,
-  working,
-  setWorking,
-}: Props) => {
+const Home = () => {
+  const { pokerData, setHouse } = usePokerDataStore();
   return (
     <HStack>
       <ul className="main-list">
